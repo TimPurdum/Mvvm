@@ -6,10 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorMvvm.Business\Mvvm.Business.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Update="Pages\About.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
@@ -22,6 +18,10 @@
     <Content Update="Pages\ItemDetail.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mvvm.Business\Mvvm.Business.csproj" />
   </ItemGroup>
 
 </Project>

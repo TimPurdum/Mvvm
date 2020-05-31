@@ -19,10 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\BlazorMvvm.Business\Mvvm.Business.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Update="Views\CounterPage.xaml">
       <SubType>Designer</SubType>
       <Generator></Generator>
@@ -61,5 +57,9 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Mvvm.Business\Mvvm.Business.csproj" />
   </ItemGroup>
 </Project>
