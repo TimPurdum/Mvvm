@@ -1,0 +1,14 @@
+﻿@using Mvvm.Business
+<div class="alert alert-secondary mt-4" role="alert">
+    <span class="oi oi-pencil mr-2" aria-hidden="true"></span>
+    <strong>@ViewModel.Title</strong>
+
+    <span class="text-nowrap">
+        @((MarkupString)ViewModel.Content.Replace("<link>", $"<a target='_blank' class='font-weight-bold' href='{ViewModel.Link}'>").Replace("</link>", "</a>"))
+    </span>
+</div>
+
+@code {
+    [Parameter]
+    public SurveyViewModel ViewModel { get; set; }
+}

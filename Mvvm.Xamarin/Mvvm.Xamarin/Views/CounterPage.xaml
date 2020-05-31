@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mvvm.Xamarin.Views.CounterPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Label Text="{Binding Title}"
+                   FontSize="Header"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Start" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Current count: " />
+                <Label Text="{Binding CurrentCount}" />
+            </StackLayout>
+            <Button Text="{Binding ClickerLabel}"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    Clicked="Button_OnClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

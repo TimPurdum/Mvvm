@@ -1,0 +1,20 @@
+﻿@page "/about"
+@using Mvvm.Business
+@inject AboutViewModel ViewModel
+
+<div style="background-color: lightblue;">
+    <div style="height: 60px; width: 100%; margin: 10px;">
+        <img style="height: 60px;" src="@ViewModel.XamarinIcon"  alt="Xamarin Icon"/>
+        <h1 style="display: inline-block">Xamarin</h1>
+    </div>
+    <div style="height: 60px; width: 100%; margin: 10px 10px 10px 20px;">
+        <img style="height: 60px;" src="@ViewModel.BLazorIcon" alt="Blazor Icon"/>
+        <h1 style="display: inline-block">Blazor</h1>
+    </div>
+</div>
+
+<h2>@ViewModel.AppName @ViewModel.Version.</h2>
+<p>@((MarkupString)ViewModel.Content)</p>
+<a class="btn btn-primary" href="@ViewModel.XamarinLink">Learn More about Xamarin</a>
+<a class="btn btn-primary" href="@ViewModel.BlazorLink">Learn More about Blazor</a>
+<a class="btn btn-primary" href="@ViewModel.ToCodeSoftwareLink">Learn More about ToCode.Software</a>

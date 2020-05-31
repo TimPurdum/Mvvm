@@ -1,0 +1,16 @@
+﻿@page "/counter"
+@using Mvvm.Business
+@inject CounterViewModel ViewModel
+
+<h1>@ViewModel.Title</h1>
+
+<p>Current count: @ViewModel.CurrentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">@ViewModel.ClickerLabel</button>
+
+@code {
+    private void IncrementCount()
+    {
+        ViewModel.CurrentCount++;
+    }
+}

@@ -1,0 +1,9 @@
+﻿@page "/"
+@using Mvvm.Business
+@inject MainViewModel ViewModel
+
+<h1>@ViewModel.Title</h1>
+
+@ViewModel.Content
+
+<SurveyPrompt ViewModel="@ViewModel.SurveyViewModel" />

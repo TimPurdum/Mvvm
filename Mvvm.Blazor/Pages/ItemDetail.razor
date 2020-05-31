@@ -1,0 +1,29 @@
+﻿@page "/item-detail/{ItemId}"
+@using Mvvm.Business
+@using Mvvm.Business.Models
+@using Mvvm.Business.Services
+@inject IDataStore<Item> DataStore
+
+<h2>Text: </h2>
+<p>@ViewModel?.Item.Text</p>
+<h2>Description: </h2>
+<p>@ViewModel?.Item.Description</p>
+
+
+@code
+{
+    [Parameter]
+    public string ItemId { get; set; }
+    
+    public ItemDetailViewModel ViewModel { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            ViewModel = new ItemDetailViewModel(await DataStore.GetItemAsync(ItemId));
+            StateHasChanged();
+        }
+        await base.OnAfterRenderAsync(firstRender);
+    }
+}

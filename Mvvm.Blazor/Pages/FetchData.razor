@@ -1,0 +1,52 @@
+﻿@page "/fetchdata"
+@using System.ComponentModel
+@using System.Reflection
+@using Mvvm.Business
+@using Mvvm.Business.Data
+@inject FetchDataViewModel ViewModel
+
+<h1>@ViewModel.Title</h1>
+
+<p>@ViewModel.Description</p>
+
+@if (forecasts == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            @foreach (var prop in typeof(WeatherForecast).GetProperties())
+            {
+                <th>@(((DisplayNameAttribute)prop.GetCustomAttribute<DisplayNameAttribute>(false))?.DisplayName)</th>
+            }
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var forecast in ViewModel.Forecasts)
+        {
+            <tr>
+                <td>@forecast.Date.ToShortDateString()</td>
+                <td>@forecast.TemperatureC</td>
+                <td>@forecast.TemperatureF</td>
+                <td>@forecast.Summary</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+    private WeatherForecast[] forecasts;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        await ViewModel.GetForecastAsync(DateTime.Now);
+    }
+
+
+}

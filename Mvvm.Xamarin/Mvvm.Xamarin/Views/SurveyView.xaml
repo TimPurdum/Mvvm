@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xamarin="clr-namespace:Mvvm.Xamarin;assembly=Mvvm.Xamarin"
+             x:Class="Mvvm.Xamarin.Views.SurveyView">
+    <ContentView.Content>
+        <StackLayout BackgroundColor="LightGray" Orientation="Horizontal">
+            <Label Text="" FontFamily="Iconic" />
+            <Label Text="{Binding Title}"
+                   FontSize="Large"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Start" />
+            <Label x:Name="LinkLabel" />
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

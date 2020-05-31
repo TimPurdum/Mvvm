@@ -1,0 +1,28 @@
+﻿@page "/browse"
+@using Mvvm.Business
+@inject ItemsViewModel ViewModel
+
+@foreach (var item in ViewModel.Items)
+{
+    <div>
+        <h2>@item.Text</h2>
+        <a href="/item-detail/@item.Id">@item.Description</a>
+    </div>
+}
+
+<a class="btn btn-primary" href="/new-item"><i class="oi oi-plus"></i> Add</a>
+
+@code
+{
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRenderAsync(firstRender);
+        if (!ViewModel.IsBusy)
+        {
+            ViewModel.LoadItemsCommand.Execute(null);
+            StateHasChanged();
+        }
+    }
+
+
+}

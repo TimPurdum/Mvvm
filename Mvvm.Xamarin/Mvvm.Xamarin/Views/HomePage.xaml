@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Mvvm.Xamarin.Views;assembly=Mvvm.Xamarin"
+             x:Class="Mvvm.Xamarin.Views.HomePage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Label Text="{Binding Title}"
+                   FontSize="Header"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Start" />
+            <Label Text="{Binding Content}" />
+            <views:SurveyView BindingContext="{Binding SurveyViewModel}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
